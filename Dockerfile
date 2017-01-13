@@ -1,6 +1,12 @@
-FROM davidjfelix/python3.5
+FROM python3.5
 
 # Add Environment Variables
+ENV PYTHONUNBUFFERED 1
+RUN mkdir /usr/src/app
+WORKDIR /usr/src/app
+ADD requirements.txt /usr/src/app
+RUN pip install -r /usr/src/apprequirements.txt
+ADD . /usr/src/app
 
 ENV MYSQL_USER admin
 ENV MYSQL_DATABASE test
