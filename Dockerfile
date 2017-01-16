@@ -5,7 +5,7 @@ ENV PYTHONUNBUFFERED 1
 RUN mkdir /usr/src/app
 WORKDIR /usr/src/app
 ADD requirements.txt /usr/src/app
-RUN pip install -r /usr/src/apprequirements.txt
+RUN pip install -r /usr/src/app/requirements.txt
 ADD . /usr/src/app
 
 ENV MYSQL_USER admin
